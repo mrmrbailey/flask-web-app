@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head xmlns="http://www.w3.org/1999/html">
+    <meta charset="UTF-8">
+    <title>Temperature Converter App</title>
+</head>
+<html lang="en">
+  <body>
+    <main>
+      <h1>This is my converter</h1>
+
+      <form method="post" action="{{url_for('convert')}}">
+          <label for="celsius">Celsius Temperature: </label>
+          <input type="text" id="celsius" name="celsius">
+
+          <input type="submit" value="Convert">
+      </form>
+    </main>
+  </body>
+</html>
