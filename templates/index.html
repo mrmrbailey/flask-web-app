@@ -8,9 +8,16 @@
     <main>
       <h1>This is my converter</h1>
 
-      <form method="post" action="{{url_for('convert')}}">
+      <form method="post" action="{{url_for('convert_from_celsius')}}">
           <label for="celsius">Celsius Temperature: </label>
           <input type="text" id="celsius" name="celsius">
+
+          <input type="submit" value="Convert">
+      </form>
+
+      <form method="post" action="{{url_for('convert_from_fahrenheit')}}">
+          <label for="fahrenheit">Fahrenhiet Temperature: </label>
+          <input type="text" id="fahrenheit" name="fahrenheit">
 
           <input type="submit" value="Convert">
       </form>

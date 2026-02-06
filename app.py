@@ -10,14 +10,20 @@ def index():
     print('Request for index page received')
     return render_template('index.html')
 
-@app.route("/convert", methods=['POST'])
-def convert():
+@app.route("/fahrenheit_from", methods=['POST'])
+def convert_from_celsius():
 
     celsius = request.form.get('celsius')
     fahrenheit = temperature_converter.fahrenheit_from(celsius)
 
     print('Request for convert page received with celsius=%s' % celsius)
-    return render_template('converter.html', fahrenheit=fahrenheit)
+    return render_template('converter.html', celsius=celsius, fahrenheit=fahrenheit)
 
-if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=8080, debug=True)
+@app.route("/celsius_from", methods=['POST'])
+def convert_from_fahrenheit():
+
+    fahrenheit = request.form.get('fahrenheit')
+    celsius = temperature_converter.celsius_from(fahrenheit)
+
+    print('Request for convert page received with celsius=%s' % celsius)
+    return render_template('converter.html', celsius=celsius, fahrenheit=fahrenheit)
